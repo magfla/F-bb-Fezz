@@ -1,5 +1,5 @@
 
-var RANDOM_BACKGROUND_COLORS = false;
+var RANDOM_BACKGROUND_COLORS = true;
 
 
 $(document).ready(function(){
@@ -25,8 +25,8 @@ var app = {};
 app.setup = function(){
 	if(RANDOM_BACKGROUND_COLORS){
 		setInterval(function(){
-			$("*").css({background:getRandomColor()});
-		},1000);
+			$("body").css({background:getRandomColor()});
+		},4000);
 	}
 
 	$("#main-navigation a").on("click",function(e){
@@ -46,5 +46,5 @@ app.updateCurrentPageContent = function(arg){
 
 app.navItemClicked = function(hash){
 	app.updateCurrentPageTitle(hash);
-	app.updateCurrentPageContent("Sadly there is not so much information about " + hash +" at the monent. Maybe you would like to help fix that?");
+	app.updateCurrentPageContent("Sadly there is not so much information about " + hash +" here at the monent. Maybe you would like to help fix that?");
 }

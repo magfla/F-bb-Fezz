@@ -4,6 +4,11 @@ body{
 	background:#fafafa;
 }
 
+
+/*
+	TOP AREA
+*/
+
 #top-wrapper{
 	width:80%;
 	text-align: center;
@@ -19,6 +24,11 @@ body{
 	padding:5px;
 	font-size:3em;
 }
+
+
+/*
+	MIDDLE ARE ( Where the content lives)
+*/
 
 
 #middle-wrapper{
@@ -43,6 +53,18 @@ body{
 	background:white;
 	margin: auto;
 	text-align: center;
+}
+
+
+/*
+	BOTTOM AREA	
+*/
+
+footer{
+	width:100%;
+	text-align: center;
+	font-size: 0.5em;
+	background:white;
 }
 
 
