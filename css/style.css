@@ -1,7 +1,12 @@
+@import url('https://fonts.googleapis.com/css?family=Inconsolata|Lora');
 
 body{
-	margin:20px;
+	margin:0px;
 	background:#fafafa;
+	font-family: 'Inconsolata', monospace;
+}
+h1,h2,h3,h4,h5,h6{
+font-family: 'Lora', serif;
 }
 
 
@@ -16,12 +21,14 @@ body{
 }
 
 #header-area{
-	background:white;
-	
+	background: rgba(0,0,0,0.8);
+
+
 	text-transform: uppercase;
 	text-align: center;
-	margin:auto;
+	margin:0 auto;
 	padding:5px;
+	margin: 0em -10em;
 	font-size:3em;
 }
 
@@ -29,7 +36,9 @@ body{
 /*
 	MIDDLE ARE ( Where the content lives)
 */
-
+#description{
+		font-family: 'Inconsolata', monospace;
+}
 
 #middle-wrapper{
 	max-width:800px;
@@ -38,7 +47,8 @@ body{
 }
 
 #main-navigation{
-	background:white;
+	/* Finne behagelige background colors på alle tekst-containere */
+	background: rgba(0,0,0,0.8);
 	text-align: center;
 }
 
@@ -57,14 +67,17 @@ body{
 
 
 /*
-	BOTTOM AREA	
+	BOTTOM AREA
 */
 
 footer{
+	font-family: 'Inconsolata', monospace;
 	width:100%;
+	position: fixed;
+	bottom: 1em;
 	text-align: center;
-	font-size: 0.5em;
-	background:white;
+	font-size: 0.8rem;
+	background:transparent;
 }
 
 
