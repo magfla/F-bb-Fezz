@@ -1,11 +1,15 @@
-
-var RANDOM_BACKGROUND_COLORS = true;
+// Satt denne til false siden jeg la til den knappen, sett til true for å kjøre hele tiden og
+// fortsatt ha mulighet til å bruke knappen. Ok eller har jeg glemt noget?
+var RANDOM_BACKGROUND_COLORS = false;
 
 
 $(document).ready(function(){
 	var text = "<p> Velkommmmmenenenenenenen </p>";
 	app.setup();
-	
+	$("#bgChanger").on("click",function(){
+		$("body").css({background:getRandomColor()
+		});
+})
 });
 
 function getRandomColor() {

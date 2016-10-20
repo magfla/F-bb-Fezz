@@ -9,6 +9,9 @@ h1,h2,h3,h4,h5,h6{
 font-family: 'Lora', serif;
 }
 
+green{
+	color:green;
+}
 
 /*
 	TOP AREA
@@ -49,6 +52,7 @@ font-family: 'Lora', serif;
 #main-navigation{
 	/* Finne behagelige background colors på alle tekst-containere */
 	background: rgba(0,0,0,0.8);
+	padding:0.2em;
 	text-align: center;
 }
 
@@ -76,11 +80,28 @@ footer{
 	position: fixed;
 	bottom: 1em;
 	text-align: center;
+	transform: scale(20px);
+	transform: translateY(50%);
 	font-size: 0.8rem;
 	background:transparent;
 }
 
+#bgChanger{
+	padding:0.3em;
+	font-family: "Inconsolata", monospace;
+	background-color: transparent;
+	font-size:150%;
+	border-radius: 0.8em;
+	margin:0.2em;
+}
+#selectDomElement{
+	padding:0.3em;
+	font-family: "Inconsolata", monospace;
+	background-color: transparent;
+	font-size:150%;
+	border:none;
+	margin:0.2em;
+}
+#selectDomElement:active{
 
-green{
-	color:green;
 }
