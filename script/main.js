@@ -6,8 +6,11 @@ var RANDOM_BACKGROUND_COLORS = false;
 $(document).ready(function(){
 	var text = "<p> Velkommmmmenenenenenenen </p>";
 	app.setup();
+	// Får ikke satt inn select.val() på riktig måte. FIXED: med toString() :D:D
 	$("#bgChanger").on("click",function(){
-		$("body").css({background:getRandomColor()
+		var whichElement = $("select").val();
+		console.log(whichElement);
+		var change = $(whichElement.toString()).css({background:getRandomColor()
 		});
 })
 });
