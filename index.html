@@ -29,13 +29,17 @@
 
 			<nav id="main-navigation">
 				<a href="#js">Javascript</a>
-				<a href="#html">html</a>
-				<a href="#css">css</a>
-				<a href="#php">php</a>
+				<a href="#html">&lt;html&gt;</a>
+				<a href="#css">css {}</a>
+				<a href="#php">.php</a>
+				<br/>
+				<a href="#display-area">Changelog</a>
 		    </nav>
 
 		    <section id="display-area">
-		    	<h1>Changelog </h1>
+					<header>
+		    		<h1>Changelog </h1>
+					</header>
 		    	<p>Har en paragraf til å teste ting med :D Det kan være lurt å ha endel tekst i sånne ting også
 					,så man får testet flyten i siden ved rezing bedre.  </p>
 
@@ -46,6 +50,7 @@
 					få enda kulere resultater :) Dette som en erstatning for "bakgrunnsfarge" -->
 					<button id="bgChanger">Endre bakgrunnsfarge på :</button>
 					<select id="selectDomElement">
+						<option value="*">Alt!</option>
 						<option value="body">Body</option>
 						<option value="h1">H1 headers</option>
 						<option value="h2">H2 headers</option>
@@ -54,7 +59,11 @@
 						<option value="h5">H5 headers</option>
 						<option value="h6">H6 headers</option>
 						<option value="p">Paragraphs</option>
-						<option value="*">Alt!</option>
+						<option value="header">headere</option>
+						<option value="section">sections</option>
+						<option value="footer">footern</option>
+						<option value="a">linker</option>
+						<option value="nav">nav</option>
 					</select>
 				</section>
 		</section>  <!-- middle wrapper ends -->
