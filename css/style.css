@@ -18,7 +18,7 @@ green{
 */
 
 #top-wrapper{
-	width:80%;
+	width:100%;
 	text-align: center;
 	margin:auto;
 }
@@ -31,7 +31,6 @@ green{
 	text-align: center;
 	margin:0 auto;
 	padding:5px;
-	margin: 0em -10em;
 	font-size:1.5em;
 }
 
