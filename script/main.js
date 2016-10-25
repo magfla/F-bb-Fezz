@@ -9,7 +9,7 @@ $(document).ready(function(){
 	// Får ikke satt inn select.val() på riktig måte. FIXED: med toString() :D:D
 	$("#bgChanger").on("click",function(){
 		var whichElement = $("select").val();
-		console.log(whichElement);
+		//console.log(whichElement);
 		var change = $(whichElement.toString()).css({background:getRandomColor()
 		});
 })
@@ -26,7 +26,6 @@ function getRandomColor() {
 
 
 
-
 var app = {};
 
 app.setup = function(){
@@ -40,6 +39,9 @@ app.setup = function(){
 		app.navItemClicked(window.location.hash);
 
 	});
+
+
+	
 }
 
 app.updateCurrentPageTitle = function(arg){
@@ -53,5 +55,12 @@ app.updateCurrentPageContent = function(arg){
 
 app.navItemClicked = function(hash){
 	app.updateCurrentPageTitle(hash);
-	app.updateCurrentPageContent("Sadly there is not so much information about " + hash +" here at the monent. Maybe you would like to help fix that?");
+
+	$.get("pages/"+hash.substr(1)+".html",function(data){
+		app.updateCurrentPageContent(data);
+	});
+
+
+	//app.updateCurrentPageContent("Sadly there is not so much information about " + hash +" here at the monent. Maybe you would like to help fix that?");
 }
+
