@@ -81,10 +81,11 @@ green{
 }
 
 
-#display-area{
+#display-area p h1{
 	background:white;
 	margin: auto;
 	text-align: center;
+	font-size:3em;
 }
 
 

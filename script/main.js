@@ -45,7 +45,7 @@ app.setup = function(){
 }
 
 app.updateCurrentPageTitle = function(arg){
-	$("#display-area h1").html(arg);
+	//$("#display-area h1").html(arg);
 }
 
 app.updateCurrentPageContent = function(arg){
@@ -54,7 +54,7 @@ app.updateCurrentPageContent = function(arg){
 
 
 app.navItemClicked = function(hash){
-	app.updateCurrentPageTitle(hash);
+	//app.updateCurrentPageTitle(hash.substr(1));
 
 	$.get("pages/"+hash.substr(1)+".html",function(data){
 		app.updateCurrentPageContent(data);
