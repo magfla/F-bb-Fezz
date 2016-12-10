@@ -6,10 +6,9 @@ var RANDOM_BACKGROUND_COLORS = false;
 $(document).ready(function(){
 	var text = "<p> Velkommmmmenenenenenenen </p>";
 	app.setup();
-	// Får ikke satt inn select.val() på riktig måte. FIXED: med toString() :D:D
+	// Endrer farge på valgt element
 	$("#bgChanger").on("click",function(){
 		var whichElement = $("select").val();
-		//console.log(whichElement);
 		var change = $(whichElement.toString()).css({background:getRandomColor()
 		});
 })
@@ -45,7 +44,7 @@ app.setup = function(){
 }
 
 app.updateCurrentPageTitle = function(arg){
-	//$("#display-area h1").html(arg);
+	$("#display-area h1").html(arg);
 }
 
 app.updateCurrentPageContent = function(arg){
@@ -54,7 +53,7 @@ app.updateCurrentPageContent = function(arg){
 
 
 app.navItemClicked = function(hash){
-	//app.updateCurrentPageTitle(hash.substr(1));
+	app.updateCurrentPageTitle(hash.substr(1));
 
 	$.get("pages/"+hash.substr(1)+".html",function(data){
 		app.updateCurrentPageContent(data);
