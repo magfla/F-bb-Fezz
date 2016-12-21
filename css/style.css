@@ -61,6 +61,14 @@ green{
 	margin-left:20px;
 	list-style: none;
 }
+
+.linje-gjennom{
+	text-decoration: line-through;
+}
+.underveis{
+	font-weight: bold;
+}
+
 /* menyen som vises vertikalt */
 #dickeLinken{
 	list-style: none;
