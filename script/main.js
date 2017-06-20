@@ -28,7 +28,7 @@ function getRandomColor() {
 var app = {};
 
 app.setup = function(){
-	if(RANDOM_BACKGROUND_COLORS){
+	if(RANDOM_BACKGROUND_COLORS){ // avhengig av en booleans verdi bytter bakgrunnen hvert 4.sekund eller ikke
 		setInterval(function(){
 			$("body").css({background:getRandomColor()});
 		},4000);
