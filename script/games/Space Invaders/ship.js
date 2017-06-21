@@ -1,4 +1,5 @@
 function Ship(x,y) {
+	this.health = 10;
 	this.pos = createVector(width/2,height/2);
 	this.r = 20;
 	this.heading = 0; // Retningen vi peker mot, i radians. PI/2 
@@ -6,14 +7,19 @@ function Ship(x,y) {
 	this.acc = createVector(0,0); // Our speed, or rate of change
 	this.rotation = 0;
 	this.isBoosting = false; // Booster ikke som default
+	this.isAlive=true; // We are alive at first... when lives <=0 we are not alive anymore
 
 	this.boosting = function(b){
 		this.isBoosting=b; // Endrer statusen på isBoosting
+		// sprut 'flammer' ut av baken
 	}
 
 	this.update = function(){ // Oppdaterer posisjonen
 		if(this.isBoosting){// Booster vi? 
 			this.boost();
+		}
+		if(this.health<=0){ // If lives reach 0, we are dead and the game is over
+			this.isAlive=false;
 		}
 		this.pos.add(this.vel);
 		this.vel.mult(0.95); // Gjør det litt smoothere
@@ -27,12 +33,33 @@ function Ship(x,y) {
 	this.levelup = function(){
 		//levelUpSound.play();
 		this.pos = createVector(width/2,height/2);
+		pointFactor++;
+		currentLevel++;
 	}
 	this.restart = function(){
-		this.pos = createVector(width/2,height/2);
+		if(this.health>0){
+			this.pos = createVector(width/2,height/2);	
+		}
+		
 		//deathSound.playMode("sustain"); // eller restart. Et fett slik det er nå 
 		//deathSound.play() // SPILL KUN EN GANG 
 	}
+
+	this.displayHealth = function(){
+		// Check if we still have lives left. 
+		if(this.isAlive){
+			textSize(32);
+			fill(200,100,0);
+			var health = "Lives: " + this.health;
+			text(health,10,50);
+		}
+		else{
+			gameOver();
+		}
+		
+	}
+
+	
 
 	this.edges = function(){ // Håndterer kantene! 
 		if(this.pos.x > width + this.r){ 
@@ -50,6 +77,7 @@ function Ship(x,y) {
 		}
 	}
 	this.hits = function(asteroid){
+		// Check the distance between the ship and a given asteroid 
 		var d=dist(this.pos.x,this.pos.y,asteroid.pos.x,asteroid.pos.y);
 		if(d<this.r+asteroid.r){
 			return true
@@ -59,11 +87,19 @@ function Ship(x,y) {
 		}
 	}
 
+	this.hitsHealth=function (life) {
+		var d = dist(this.pos.x,this.pos.y,life.pos.x,life.pos.y);
+		if(d<5){ // if the distance is less than 5 pixels, add health
+			this.health++;
+			lifeArray.pop(); // Clears the lifeArray, destroying the displayed life
+		}
+	}
+
 	this.render = function(){
 		push(); // MÅ PUSHE OG POPPE PGA TRANSLATE()
-		noFill(); // Gjennomsiktig
-		fill(0);
-		stroke(255); // Streken/kantene
+		
+		fill('rgba(255,100,50,0.9)');
+		stroke(150); // Streken/kantene
 		translate(this.pos.x,this.pos.y);	// Setter posisjonen til dette objektets koordinater
 		rotate(this.heading + PI/2);
 		triangle(-this.r,this.r,this.r,this.r,0,-this.r);

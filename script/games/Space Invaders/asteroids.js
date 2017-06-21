@@ -6,13 +6,14 @@ function createAsteroids(antall){
 
 function Asteroid(pos,r){
 	if(pos){
-		this.pos = pos.copy();
+		this.pos = pos.copy(); // Used when creating 'children'
 	}
 	else{
-		this.pos = createVector(random(width),random(height));	
+		this.pos=createVector(random(width),random(height)); // Create random position for this asteroid 
 	}
 
 	if(r){
+		// the new asteroid has half the radius of the 'parent'
 		this.r = r*0.5;
 	}
 	else{
@@ -22,7 +23,7 @@ function Asteroid(pos,r){
 	this.vel = p5.Vector.random2D();
 	this.total = floor(random(5,15))
 	this.offset = [];
-	this.shade=random(random(30,200),random(30,200)); // Gråtonen
+	this.shade=random(random(30,200,random(30,200))); // Gråtonen
 
 
 
@@ -40,7 +41,7 @@ function Asteroid(pos,r){
 		newArray[1] = new Asteroid(this.pos,this.r);
 		//newArray[2] = new Asteroid(this.pos,this.r);
 		//newArray[3] = new Asteroid(this.pos,this.r);
-		console.log(newArray);
+		//console.log(newArray);
 		return newArray;
 	}
 
@@ -61,7 +62,7 @@ function Asteroid(pos,r){
 
 	this.render = function(){
 		push(); // PGA TRANSLATE() MÅ VI push() & pop()
-		stroke(255);
+		stroke(150);
 		noFill();
 		fill(this.shade);
 		translate(this.pos.x,this.pos.y);

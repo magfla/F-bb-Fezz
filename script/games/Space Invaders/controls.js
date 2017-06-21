@@ -16,24 +16,11 @@ function keyPressed(){ // Kjører hvergang jeg trykker en knapp
 	else if(keyCode==DOWN_ARROW){
 		ship.boosting(false); // SKAL NEDKNAPPEN GJØRE NOE ANNET? RYGGE?
 	}
-	else if(key==" "){ // "HACK", finn betre løysning
+	else if(keyCode==32){ 
 		laserBeams.push(new Laser(ship.pos,ship.heading)); // Gir posisjon og retning som argument
 	}
-}
 
-/*function Edges(){ // KAN IMPORTERE DETTE TENKER JEG?
-	this.edges = function(){ // Håndterer kantene! 
-		if(this.pos.x > width + this.r){ 
-			this.pos.x = -this.r; // Setter oss på andre siden
-		}
-		else if(this.pos.x < -this.r ){
-			this.pos.x = width + this.r;
-		}
-		else if(this.pos.y > height + this.r){
-			this.pos.y = -this.r;
-		}
-		else if (this.pos.y < -this.r){
-			this.pos.y = height + this.r;
-		}
-	}
-} */
+	if((keyCode==82) && (!ship.isAlive)){ // if 'R' is pressed, restart the game
+		setup();
+	} 
+}
